@@ -1,0 +1,17 @@
+.IconBtn {
+  cursor: pointer;
+  display: block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(80, 80, 179);
+  border-radius: 4px;
+  background-color: rgb(165, 165, 214);
+  fill: rgb(32, 32, 129);
+}
+
+.IconBtn:hover,
+.IconBtn:focus {
+  border: 1px solid rgb(179, 80, 166);
+  background-color: rgb(210, 163, 204);
+  fill: rgb(142, 30, 127);
+}

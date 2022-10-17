@@ -1,0 +1,17 @@
+[
+  {
+    "id": "id-1",
+    "label": "Favor Functional Components",
+    "content": "Favor functional components - they have a simpler syntax. No lifecycle methods, constructors or boilerplate. You can express the same logic with less characters without losing readability. Unless you need an error boundary they should be your go-to approach. The mental model you need to keep in your head is a lot smaller."
+  },
+  {
+    "id": "id-2",
+    "label": "Write Consistent Components",
+    "content": "Stick to the same style for your components. Put helper functions in the same place, export the same way and follow the same naming patterns. There isn’t a real benefit of one approach over the other. No matter if you’re exporting at the bottom of the file or directly in the definition of the component, pick one and stick to it."
+  },
+  {
+    "id": "id-3",
+    "label": "Name Components",
+    "content": "Always name your components. It helps when you’re reading an error stack trace and using the React Dev Tools. It’s also easier to find where you are when developing if the component’s name is inside the file."
+  }
+]

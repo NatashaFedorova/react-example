@@ -1,0 +1,18 @@
+.box {
+  width: 600px;
+  padding: 10px;
+  border: 1px solid rgb(73, 245, 5);
+  background-color: rgb(182, 235, 161);
+}
+
+.btn {
+  padding: 5px;
+  border: 1px solid rgb(73, 245, 5);
+  border-radius: 4px;
+  background-color: rgb(248, 248, 247);
+  cursor: pointer;
+}
+
+.btn:not(:last-child) {
+  margin-right: 15px;
+}

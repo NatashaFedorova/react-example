@@ -18,3 +18,12 @@
 .block-clock {
   display: flex;
 }
+
+.btn-close {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  margin: 12px 0 12px auto;
+}

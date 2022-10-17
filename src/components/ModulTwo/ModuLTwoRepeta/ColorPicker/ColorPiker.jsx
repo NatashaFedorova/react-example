@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 // import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 import './ColorPicker.css';
 
-export class ColorPicker extends Component {
+export class ColorPicker extends PureComponent {
   state = {
     activeOptionIdx: 2,
   };
