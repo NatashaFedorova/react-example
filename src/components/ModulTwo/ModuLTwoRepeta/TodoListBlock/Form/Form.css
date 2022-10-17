@@ -1,0 +1,11 @@
+.BtnSubmit {
+  display: block;
+  margin: 20px 0;
+}
+.BlockLevel {
+  margin: 20px 0;
+}
+
+.BlockLevel span {
+  margin-right: 10px;
+}

@@ -1,0 +1,14 @@
+.button-show {
+  position: relative;
+  margin: 20px;
+  padding: 30px;
+  border: 1px solid rgb(8, 55, 55);
+}
+.dropdown-window {
+  position: absolute;
+  top: 105px;
+  left: 20px;
+  padding: 30px;
+  border: 1px solid rgb(8, 55, 55);
+  background-color: aqua;
+}

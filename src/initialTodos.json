@@ -1,0 +1,17 @@
+[
+  {
+    "id": "id-1",
+    "text": "Вивчити HTML та CSS",
+    "completed": false
+  },
+  {
+    "id": "id-2",
+    "text": "Вивчити JS",
+    "completed": true
+  },
+  {
+    "id": "id-3",
+    "text": "Вивчити React",
+    "completed": false
+  }
+]
