@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { TodoList } from './TodoList';
-import TodoEditor from './TodoEditor';
+import { TodoList } from '../TodoList';
+import TodoEditor from '../TodoEditor';
 import { nanoid } from 'nanoid';
 // import Form from './Form';
-import Filter from './Filter';
-import Modal from './Modal';
+import Filter from '../Filter';
+import Modal from '../Modal';
 // import Clock from './Clock';
 // import tabs from '../../tabs.json';
-import { ReactComponent as AddIcon } from '../../icons/add.svg';
-import { ReactComponent as CloseIcon } from '../../icons/close.svg';
+import { ReactComponent as AddIcon } from '../../../icons/add.svg';
+import { ReactComponent as CloseIcon } from '../../../icons/close.svg';
 
 import './App.css';
-import initialTodos from '../../initialTodos.json';
+import initialTodos from '../../../data/initialTodos.json';
 // import Tabs from './Tabs';
-import IconBtn from './IconBtn';
+import IconBtn from '../IconBtn';
 
 export class App extends Component {
   state = {
