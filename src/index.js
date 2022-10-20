@@ -11,7 +11,10 @@ import './index.css';
 // import App from 'components/ModulThree/Player/App';
 
 // App модуля 3 (Reader)==================================================
-import App from 'components/ModulThree/Reader/App';
+// import App from 'components/ModulThree/Reader/App';
+
+// App модуля 3 (Pokemon)==================================================
+import App from 'components/ModulThree/Pokemon/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
