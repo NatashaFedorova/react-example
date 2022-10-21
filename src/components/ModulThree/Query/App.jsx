@@ -1,69 +1,103 @@
 import { Component } from 'react';
-import Select from 'react-select';
-import axios from 'axios';
-
-axios.defaults.baseURL = 'https://api.thedogapi.com/v1';
-axios.defaults.headers['x-api-key'] = process.env.REACT_APP_API_KEY;
+import toast, { Toaster } from 'react-hot-toast';
+import { getBreeds, getDodImg } from './api.js';
+import BreedSelect from './BreedSelect.jsx';
+import Dog from './Dog/Dog.jsx';
+import DogSkeleton from './Dog/DogSkeleton.jsx';
 
 class App extends Component {
   state = {
     breeds: [],
     dog: null,
     selectedBreed: null,
+    isLoadingBreeds: false,
+    isLoadingDog: false,
+    error: null,
   };
 
   async componentDidUpdate(_, prevState) {
     if (prevState.selectedBreed !== this.state.selectedBreed) {
       this.fetchDog();
     }
+
+    if (prevState.error !== this.state.error) {
+      toast.error(this.state.error);
+    }
   }
 
   async componentDidMount() {
     try {
-      const response = await axios.get('/breeds');
-      this.setState({ breeds: response.data });
-    } catch (error) {
-      console.log(error);
+      this.setState({ isLoadingBreeds: true });
+      const breeds = await getBreeds();
+      this.setState({ breeds });
+    } catch {
+      this.setState({ error: 'Oops! Something went wrong :( please, try reloading the page' });
+    } finally {
+      this.setState({ isLoadingBreeds: false });
     }
   }
 
-  buildOptions = () => {
-    return this.state.breeds.map(breed => ({ value: breed.id, label: breed.name }));
-  };
-
-  handleChangeBreed = async option => {
-    this.setState({ selectedBreed: option.value });
+  handleChangeBreed = breed => {
+    this.setState({ selectedBreed: breed });
   };
 
   fetchDog = async () => {
     try {
-      const response = await axios.get('/images/search', {
-        params: { breed_id: this.state.selectedBreed },
-      });
-      this.setState({ dog: response.data[0] });
-    } catch (error) {
-      console.log(error);
+      this.setState({ isLoadingDog: true });
+      const dog = await getDodImg(this.state.selectedBreed);
+      this.setState({ dog, isLoadingDog: false });
+    } catch {
+      this.setState({ error: 'Failed to load dog :(' });
+    } finally {
+      this.setState({ isLoadingDog: false });
     }
   };
 
   render() {
-    const { dog } = this.state;
-    const options = this.buildOptions();
+    const { dog, breeds, isLoadingBreeds, isLoadingDog, error } = this.state;
+
     return (
       <>
-        <Select options={options} onChange={this.handleChangeBreed} />
-
-        {dog && (
+        <BreedSelect
+          breeds={breeds}
+          onSelect={this.handleChangeBreed}
+          isLoading={isLoadingBreeds}
+        />
+        {isLoadingDog && <DogSkeleton />}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {dog && !isLoadingDog && (
           <div>
-            <img src={dog.url} alt="dog" width="480" />
             <hr />
+            <Dog dog={dog} />
             <button type="button" onClick={this.fetchDog}>
               Показати інші фото
             </button>
           </div>
         )}
+        <Toaster position="bottom-right" />
       </>
     );
   }
 }
 export default App;
+
+// ===============================================
+//  приклад лоудера
+// import SyncLoader from 'react-spinners/SyncLoader';
+/* <SyncLoader
+color="#719890"
+cssOverride={{
+  display: 'block',
+  margin: '0 auto',
+}}
+loading={isLoadingDog}
+margin={4}
+size={15}
+speedMultiplier={1}
+/> */
+// ==============================================================
+
+// ==============================================================
+// варіанти відображення помилки
+// toast.error('Failed to load breeds  :(');
+// this.setState({ error: 'Oops! Something went wrong :( please, try reloading the page' });
