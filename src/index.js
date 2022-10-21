@@ -20,7 +20,10 @@ import './index.css';
 // import App from 'components/ModulThree/CollectionOfMaterials/App';
 
 // App модуля 3 (Load more)==================================================
-import App from 'components/ModulThree/LoadMore/App';
+// import App from 'components/ModulThree/LoadMore/App';
+
+// App модуля 3 (HTTP-запити)==================================================
+import App from 'components/ModulThree/Query/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
