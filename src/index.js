@@ -17,7 +17,10 @@ import './index.css';
 // import App from 'components/ModulThree/Pokemon/App';
 
 // App модуля 3 (Collection Of Materials)==================================================
-import App from 'components/ModulThree/CollectionOfMaterials/App';
+// import App from 'components/ModulThree/CollectionOfMaterials/App';
+
+// App модуля 3 (Load more)==================================================
+import App from 'components/ModulThree/LoadMore/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
