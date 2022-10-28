@@ -23,7 +23,24 @@ import './index.css';
 // import App from 'components/ModulThree/LoadMore/App';
 
 // App модуля 3 (HTTP-запити)==================================================
-import App from 'components/ModulThree/Query/App';
+// import App from 'components/ModulThree/Query/App';
+
+// Модуль 4 (Кастомний компонент провайдера. Хуки)=========================
+// import { App } from 'components/ModulFourHooks/Abstract/UserRegistration/App';
+// import { UserProvider } from 'components/ModulFourHooks/Abstract/UserRegistration/userContext';
+
+// App модуля 4 (Хуки)==================================================
+// import App from 'components/ModulFourHooks/Abstract/Example/App';
+
+// App модуля 4 (Хуки)==================================================
+// import App from 'components/ModulFourHooks/SignupForm/App';
+
+// App модуля 4 (Хуки)==================================================
+// import App from 'components/ModulFourHooks/ColorPicker/App';
+// import options from './data/colorPickerOptions.json';
+
+// App модуля 4 (Хуки)==================================================
+import App from 'components/ModulFourHooks/Counter/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,3 +48,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
+// =====================================================================
