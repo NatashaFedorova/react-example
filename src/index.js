@@ -40,7 +40,10 @@ import './index.css';
 // import options from './data/colorPickerOptions.json';
 
 // App модуля 4 (Хуки)==================================================
-import App from 'components/ModulFourHooks/Counter/App';
+// import App from 'components/ModulFourHooks/Counter/App';
+
+// App модуля 4 (Хуки)==================================================
+import App from 'components/ModulFourHooks/Clock/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

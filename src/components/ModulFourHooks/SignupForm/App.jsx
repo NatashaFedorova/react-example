@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
+import useLocalStorage from '../Hooks/useLocalStorage';
 
 const App = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useLocalStorage('email', '');
+  const [password, setPassword] = useLocalStorage('password', '');
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -21,6 +22,14 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    window.localStorage.setItem('email', JSON.stringify(email));
+  }, [email]);
+
+  useEffect(() => {
+    window.localStorage.setItem('password', JSON.stringify(password));
+  }, [password]);
+
   return (
     <form autoComplete="off">
       <label>
@@ -36,7 +45,31 @@ const App = () => {
     </form>
   );
 };
+
 export default App;
+
+// ===============================================================
+// приклад без викоритсання кастомніх хуків (з використанням в діючому коді)
+// const [email, setEmail] = useState(() => JSON.parse(window.localStorage.getItem('email')) ?? '');
+// const [password, setPassword] = useState(
+//   () => JSON.parse(window.localStorage.getItem('password')) ?? ''
+// );
+// useEffect(() => {
+//   window.localStorage.setItem('email', JSON.stringify(email));
+// }, [email]);
+// useEffect(() => {
+//   window.localStorage.setItem('password', JSON.stringify(password));
+// }, [password]);
+// ==============================================================
+
+// ================================================================
+// при такому записі , перевірка буде проводитися кожний рендер
+//   const [email, setEmail] = useState(JSON.parse(window.localStorage.getItem('email')) ?? '');
+// ---------
+// якщо використовувати lazy state initialization (лінива ініціалізація стану)
+// тоді перевірка буде тільки на першому рендері, а потім повністю її проігнорує
+// const [email, setEmail] = useState(() => JSON.parse(window.localStorage.getItem('email')) ?? '');
+// ==============================================================
 
 // ===============================================================
 //   що там у  useState()
