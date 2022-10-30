@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { useState } from 'react';
 import './ColorPicker.css';
 
-export default function App({ options }) {
+const App = ({ options }) => {
   const [activeOptionIdx, setActiveOptionIdx] = useState(0);
 
   const makeOptionClassName = idx => {
@@ -23,7 +24,10 @@ export default function App({ options }) {
       </div>
     </div>
   );
-}
+};
+
+export default memo(App);
+// memo - це заміна PureComponent для хуків (поверхнева перевірка зміни пропсів)
 
 // ===================================================
 //   const { label } = options[activeOptionIdx];

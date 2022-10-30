@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+
+const NewsSearchForm = ({ onSubmit }) => {
+  const [query, setQuery] = useState('');
+
+  const handleChange = e => setQuery(e.target.value);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(query);
+    onSubmit(query);
+    setQuery('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={query} onChange={handleChange} />
+      <button type="submit">Search</button>
+    </form>
+  );
+};
+
+export default NewsSearchForm;

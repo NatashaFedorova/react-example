@@ -39,6 +39,13 @@ import './index.css';
 // import App from 'components/ModulFourHooks/ColorPicker/App';
 // import options from './data/colorPickerOptions.json';
 
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     <App options={options} />
+//   </React.StrictMode>
+// );
+
 // App модуля 4 (Хуки)==================================================
 // import App from 'components/ModulFourHooks/Counter/App';
 
@@ -55,12 +62,20 @@ import './index.css';
 // import App from 'components/ModulFourHooks/CounterUseReducer/App';
 
 // App модуля 4 (Хуки. useMemo)==================================================
-import App from 'components/ModulFourHooks/Friends/App';
+// import App from 'components/ModulFourHooks/Friends/App';
+
+// App модуля 4 (Хуки)==================================================
+// import App from 'components/ModulFourHooks/News/App';
+
+// App модуля 4 (Хуки)==================================================
+import App from 'components/ModulFourHooks/UserMenu/App.jsx';
+import AuthProvider from './context/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
-// =====================================================================

@@ -30,8 +30,13 @@ const App = () => {
     window.localStorage.setItem('password', JSON.stringify(password));
   }, [password]);
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('email:', email, 'password:', password);
+  };
+
   return (
-    <form autoComplete="off">
+    <form autoComplete="off" onSubmit={handleSubmit}>
       <label>
         Email
         <input type="email" name="email" onChange={handleChange} value={email} />
