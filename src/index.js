@@ -43,7 +43,19 @@ import './index.css';
 // import App from 'components/ModulFourHooks/Counter/App';
 
 // App модуля 4 (Хуки)==================================================
-import App from 'components/ModulFourHooks/Clock/App';
+// import App from 'components/ModulFourHooks/Clock/App';
+
+// App модуля 4 (Хуки)==================================================
+// import App from 'components/ModulFourHooks/SkipEffectOnFirstRender/App.jsx';
+
+// App модуля 4 (Хуки. useEffect)==================================================
+// import App from 'components/ModulFourHooks/Pokemon/App';
+
+// App модуля 4 (Хуки. useReducer)==================================================
+// import App from 'components/ModulFourHooks/CounterUseReducer/App';
+
+// App модуля 4 (Хуки. useMemo)==================================================
+import App from 'components/ModulFourHooks/Friends/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
