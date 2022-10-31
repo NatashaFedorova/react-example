@@ -68,8 +68,17 @@ import './index.css';
 // import App from 'components/ModulFourHooks/News/App';
 
 // App модуля 4 (Хуки)==================================================
-import App from 'components/ModulFourHooks/UserMenu/App.jsx';
+// import App from 'components/ModulFourHooks/UserMenu/App.jsx';
 import AuthProvider from './context/AuthProvider';
+
+// App модуля 4 (Хуки)==================================================
+// import App from 'components/ModulFourHooks/LoadMore/App';
+
+// App модуля 4 (Хуки)==================================================
+// import App from 'components/ModulFourHooks/ModalExample1/App';
+
+// App модуля 4 (Хуки)==================================================
+import App from 'components/ModulFourHooks/ModalExample2/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
