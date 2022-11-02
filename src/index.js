@@ -78,7 +78,10 @@ import AuthProvider from './context/AuthProvider';
 // import App from 'components/ModulFourHooks/ModalExample1/App';
 
 // App модуля 4 (Хуки)==================================================
-import App from 'components/ModulFourHooks/ModalExample2/App';
+// import App from 'components/ModulFourHooks/ModalExample2/App';
+
+// App модуля 4 (Хуки)==================================================
+import App from 'components/ModulFourHooks/NewsPortalVebinar/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
