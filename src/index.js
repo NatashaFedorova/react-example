@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 // App модуля 2===========================================================
 // import { App } from 'components/ModulTwo/App';
@@ -69,7 +70,7 @@ import './index.css';
 
 // App модуля 4 (Хуки)==================================================
 // import App from 'components/ModulFourHooks/UserMenu/App.jsx';
-import AuthProvider from './context/AuthProvider';
+// import AuthProvider from './context/AuthProvider';
 
 // App модуля 4 (Хуки)==================================================
 // import App from 'components/ModulFourHooks/LoadMore/App';
@@ -84,13 +85,25 @@ import AuthProvider from './context/AuthProvider';
 // import App from 'components/ModulFourHooks/NewsPortalVebinar/App';
 
 // App модуля 4 (Хуки)==================================================
-import App from 'components/ModulFourHooks/QueryHooks/App';
+// import App from 'components/ModulFourHooks/QueryHooks/App';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     <AuthProvider>
+//       <App />
+//     </AuthProvider>
+//   </React.StrictMode>
+// );
+
+// App модуля 5 (Routing)==================================================
+import App from './ModulFiveRouting/Shop/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
+    <BrowserRouter>
       <App />
-    </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
