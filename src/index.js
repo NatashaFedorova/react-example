@@ -96,7 +96,7 @@ import './index.css';
 //   </React.StrictMode>
 // );
 
-// App модуля 5 (Routing)==================================================
+// App модуля 5 (Routing. Abstract)==================================================
 import App from './ModulFiveRouting/Shop/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
