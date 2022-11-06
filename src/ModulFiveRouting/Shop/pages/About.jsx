@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import { Suspense } from 'react';
 
 const StyleLink = styled(NavLink)`
   position: relative;
@@ -83,7 +84,9 @@ const About = () => {
           </StyleLink>
         </li>
       </List>
-      <Outlet />
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };
