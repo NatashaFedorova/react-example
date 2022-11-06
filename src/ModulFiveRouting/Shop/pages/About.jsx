@@ -1,8 +1,8 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import { Suspense } from 'react';
 
-const StyleLink = styled(NavLink)`
+const StyleLink = styled(Link)`
   position: relative;
   font-weight: 600;
   text-decoration: none;

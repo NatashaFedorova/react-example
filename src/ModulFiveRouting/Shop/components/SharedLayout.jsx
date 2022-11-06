@@ -56,6 +56,9 @@ const StyleNavLink = styled(NavLink)`
   &:hover::after {
     --scale: 1;
   }
+  &.active {
+    color: rgb(155, 0, 0);
+  }
 `;
 
 const LinkFooter = styled.a`

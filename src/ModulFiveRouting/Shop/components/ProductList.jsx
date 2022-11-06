@@ -1,4 +1,4 @@
-import { useLocation, NavLink } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -8,7 +8,7 @@ const List = styled.ul`
   align-items: center;
   gap: 50px;
 `;
-const StyleLink = styled(NavLink)`
+const StyleLink = styled(Link)`
   position: relative;
   font-weight: 600;
   text-decoration: none;

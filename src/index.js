@@ -97,7 +97,10 @@ import './index.css';
 // );
 
 // App модуля 5 (Routing. Abstract)==================================================
-import App from './ModulFiveRouting/Shop/components/App';
+// import App from './ModulFiveRouting/Shop/components/App';
+
+// App модуля 5 (Routing. Repeta)==================================================
+import App from './ModulFiveRouting/Admin/components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
