@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { getInvoices } from '../fakeAPI';
+import { Suspense } from 'react';
 // import InvoicesDetails from './InvoicesDelails';
 
 const Aside = styled.aside`
@@ -47,7 +48,9 @@ const Invoices = () => {
         ))}
       </Aside>
       <main>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
     </div>
   );
