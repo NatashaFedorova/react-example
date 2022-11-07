@@ -2,7 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { getInvoices } from '../fakeAPI';
-import InvoicesDetails from './InvoicesDelails';
+// import InvoicesDetails from './InvoicesDelails';
 
 const Aside = styled.aside`
   padding: 30px;

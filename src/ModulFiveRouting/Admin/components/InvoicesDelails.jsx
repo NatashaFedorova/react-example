@@ -1,11 +1,28 @@
-const InvoicesDetails = ({ item }) => {
-  const { account, recipient, total } = item;
+import { useParams } from 'react-router-dom';
+import { getInvoiceById } from '../fakeAPI';
+import { useState, useEffect } from 'react';
+
+const InvoicesDetails = () => {
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
+
+  useEffect(() => {
+    getInvoiceById(id).then(setItem);
+  }, [id]);
+
+  if (!item) {
+    return;
+  }
+  const { recipient, account, total, date } = item;
+
   return (
-    <div >
-      <ul>
-        <li>{account}</li>
-        <li>{recipient}</li>
-        <li>{total}</li>
+    <div>
+      <ul style={{ listStyle: 'none' }}>
+        <li>Recipient: {recipient}</li>
+        <li>Account number: {account}</li>
+        <li>Total due: {total}$</li>
+        <li>Invoice data: {new Date(date.created).toLocaleDateString()}</li>
+        <li>Due data: {new Date(date.due).toLocaleDateString()}</li>
       </ul>
     </div>
   );

@@ -25,7 +25,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const Box = styled.div`
+const Box = styled.header`
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;

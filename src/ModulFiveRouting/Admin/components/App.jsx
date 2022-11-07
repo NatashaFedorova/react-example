@@ -10,13 +10,23 @@ import Invoices from './Invoices';
 import Deposits from './Deposits';
 import InvoicesDetails from './InvoicesDelails';
 
+const LayoutHome = () => {
+  return <div style={{ padding: '30px' }}>Layout index page</div>;
+};
+
+const SalesHome = () => {
+  return <div style={{ padding: '30px' }}>Sales index page</div>;
+};
+
 const App = () => {
   return (
     <div style={{ width: '1200px', margin: '0 auto', border: '1px solid #000' }}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<LayoutHome />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="sales" element={<Sales />}>
+            <Route index element={<SalesHome />} />
             <Route path="analytics" element={<Analytics />} />
             <Route path="invoices" element={<Invoices />}>
               <Route path=":id" element={<InvoicesDetails />} />
